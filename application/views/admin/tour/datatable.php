@@ -20,14 +20,16 @@
 
        <thead>
          <tr>
-           <th>Employee name</th>
-           <th>Email</th>
-           <th>Gender</th>
-           <th>Salary</th>
-           <th>City</th>
+           <th>title</th>
+           <th>price</th>
+           <th>ratings</th>
+          
          </tr>
        </thead>
 
+       <tbody>
+         
+       </tbody>
      </table>
 
      <!-- Script -->

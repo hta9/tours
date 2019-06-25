@@ -34,6 +34,27 @@
 
   	}
 
+    .password 
+    { 
+      position: relative; 
+    }
+
+  
+
+   .password .field_icon
+   { 
+    position: absolute;
+    top: 30px;
+    left: 9.5%;
+    font-size: 100%;
+
+   }
+
+   .field_icon:hover
+   { 
+      color: blue;
+   }
+
   </style>
 
 </head>
@@ -60,13 +81,17 @@
 				<label for="email">Email</label>
 				<input type="text" name="email" id="email" class="input-group" autocomplete="off"
 				placeholder="Enter Email Id Here" value="<?php if (get_cookie('email')) { echo get_cookie('email'); } ?>">
+
 			</div>
 
+      <div class="password">
 			<div class="form-group">
 				<label for="password">Password</label>
-				<input type="password" name="password" id="password" class="input-group" autocomplete="off"
+				<input type="password" name="password" id="password" class="input-group password" autocomplete="off"
 				placeholder="Enter Password Here" value="<?php if (get_cookie('password')) { echo get_cookie('password'); } ?>">
+      <span toggle="#password" class="fa fa-fw fa-eye field_icon toggle-password"></span>
 			</div>
+    </div>
 
 					<div class="row">
 									<div class="col-sm-2">
@@ -89,6 +114,13 @@
 </html>
 <script type="text/javascript">
 
+$(document).on('click', '.toggle-password', function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    
+    var input = $("#password");
+    input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+});
 
 $(document).ready(function() 
 {

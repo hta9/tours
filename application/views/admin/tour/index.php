@@ -31,6 +31,7 @@
 	<a href="<?php echo site_url('admin/login/logout'); ?>" >Logout</a>
 	<table border="1" align="center"  style="margin-left:10%;margin-right:10%;" id="mytable">
 		<h1 align="center">Tours</h1>
+    <i class="fa fa-shopping-cart" style="font-size:48px;color:red"></i>
 		<a href="<?php echo site_url('admin/tours/add'); ?>" class="btn btn-primary" style="margin-left:10%;margin-top:1%;margin-bottom:1%; ">Add New+</a>
 
 		<a href="javascript:void(0)" class="btn btn-danger" name="delete_all" id="delete_all" style="margin-left:1%;margin-top:1%;margin-bottom:1%; ">Delete</a>
@@ -94,6 +95,11 @@
 				<a  class="confirm_del" data-id="<?php echo base64_encode($tour['id']); ?>"><i class="glyphicon glyphicon-trash" ></i></a>
 				|
 					<a href="<?php echo site_url('admin/tours/edit') ?>/<?php echo base64_encode($tour['id']); ?>" ><i class="glyphicon glyphicon-edit"></i></a>
+
+        |
+
+          <a href="<?php echo site_url('admin/tours/') ?>/<?php echo base64_encode($tour['id']); ?>" ><i class="fa fa-shopping-cart"></i></a>
+
 			</td>
 			</tr>
 		<?php
