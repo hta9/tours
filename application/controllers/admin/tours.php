@@ -11,9 +11,9 @@ class Tours extends My_Controller
 
 	public function index()
 	{
-		//$data['tours'] = $this->tour->order_by('id','desc')->get_all();
-		//$this->load->view('admin/tour/index', $data);
-		$this->load->view('admin/tour/datatable');
+		$data['tours'] = $this->tour->order_by('id','desc')->get_all();
+		$this->load->view('admin/tour/index', $data);
+		//$this->load->view('admin/tour/datatable');
 	}
 
 	/**
