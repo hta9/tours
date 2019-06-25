@@ -98,8 +98,12 @@
 
         |
 
-          <a href="<?php echo site_url('admin/tours/') ?>/<?php echo base64_encode($tour['id']); ?>" ><i class="fa fa-shopping-cart"></i></a>
+        
 
+          <a class="cart_area fa fa-plus symbol" data-id="<?php echo base64_encode($tour['id']); ?>"><!-- <a href="javascript:void(0)"  class="cart"> -->
+          <!--  -->
+          </a> 
+       
 			</td>
 			</tr>
 		<?php
@@ -118,7 +122,52 @@ else
 </body>
 </html>
 
+<script type="text/javascript">
+  
+  $(document).ready(function($) 
+    {
+     
+      $('.symbol').click(function(event) {
+             
 
+          if($(this).hasClass('fa-plus'))
+          { 
+            var id= $(this).data('id');
+            alert(id);
+
+            $.ajax({
+              url: '<?php echo site_url('admin/cart/add_item'); ?>',
+              type: 'POST',
+    
+              data: 
+              {
+                id: id
+              },
+
+              success:function(data)
+              {
+                console.log(data);
+              }
+            })
+      
+            
+
+            $(this).removeClass('fa-plus');
+            $(this).addClass('fa-eye');
+          }
+          else
+          {
+            alert('navi');
+          }
+
+      });
+
+
+      // $('.fa-eye').click(function(event) {
+      //  alert('navigate');
+      // });
+  });
+</script>
 
 <!-- this is for select  all records  -->
 <script>
